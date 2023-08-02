@@ -36,10 +36,10 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface SessionProps {
-	data?: Session;
+	session?: Session;
 }
 
-export default function User({ data }: SessionProps) {
+export default function User({ session }: SessionProps) {
 	const { classes, cx } = useStyles();
 	return (
 		<Menu
@@ -51,11 +51,11 @@ export default function User({ data }: SessionProps) {
 			<Menu.Target>
 				<UnstyledButton className={cx(classes.user)}>
 					<Group spacing={7}>
-						<Avatar color="cyan" radius="xl" size={30} src={data?.user?.image}>
-							{data?.user?.name?.slice(0, 2)}
+						<Avatar color="cyan" radius="xl" size={30} src={session?.user?.image}>
+							{session?.user?.name?.slice(0, 2)}
 						</Avatar>
 						<Text mr={3} size="sm" sx={{ lineHeight: 1 }} weight={500}>
-							{data?.user?.name}
+							{session?.user?.name}
 						</Text>
 						<IconChevronDown size={rem(12)} stroke={1.5} />
 					</Group>

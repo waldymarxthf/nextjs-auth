@@ -6,12 +6,11 @@ import User from "./User";
 
 export default async function Header() {
 	const session = await getServerSession(authConfig);
-	console.log(session);
 	return (
 		<>
 			<HeaderMegaMenu>
 				{session ? (
-					<User data={session} />
+					<User session={session} />
 				) : (
 					<Group>
 						<Anchor href="/user/login">
